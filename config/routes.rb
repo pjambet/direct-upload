@@ -1,5 +1,5 @@
 DirectUpload::Application.routes.draw do
-  resources :signed_url, only: :index
+  resources :signed_urls, only: :index
 
   resources :photos
 

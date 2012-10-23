@@ -15,4 +15,9 @@ end
 
 gem 'jquery-rails'
 gem 'carrierwave'
+gem 'rmagick'
+gem 'haml'
+gem "fog", "~> 1.3.1"
+gem 'sextant'
+gem 'aws-s3', require: 'aws/s3'
 

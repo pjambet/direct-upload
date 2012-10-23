@@ -1,0 +1,28 @@
+= form_for(@photo, class: 'well') do |f|
+  - if @photo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@photo.errors.count, "error")} prohibited this photo from being saved:"
+
+      %ul
+        - @photo.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.hidden_field :file
+
+
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+
+  .field
+    = f.label :description
+    %br
+    = f.text_field :description
+
+  .actions
+    = f.submit class: 'btn'
+
+
+= render partial: "direct_upload_form"
+
