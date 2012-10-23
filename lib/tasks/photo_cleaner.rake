@@ -1,8 +1,9 @@
 namespace :photos do
-  task :clean do
+  task :clean => :environment do
 
     # Clean all photos
-    Photo.delete_all
+    p "Deleting photos"
+    p "#{Photo.delete_all} photos deleted"
 
     # delete all files remaining on S3
     AWS::S3::Base.establish_connection!(
@@ -14,7 +15,8 @@ namespace :photos do
     # This is shit !
     AWS::S3::DEFAULT_HOST.replace 's3-eu-west-1.amazonaws.com'
 
-    AWS::S3::Bucket.find(ENV["S3_BUCKET"])
+    p "Cleaning Bucket"
+    AWS::S3::Bucket.find(ENV["S3_BUCKET"]).delete_all
   end
 end
 
