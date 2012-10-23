@@ -1,4 +1,4 @@
-%form{ action: "https://#{ENV['S3_BUCKET']}.s3.amazonaws.com", method: "post", enctype: "multipart/form-data", class: 'direct-upload' }
+%form{ action: "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com", method: "post", enctype: "multipart/form-data", class: 'direct-upload' }
   %input{type: :hidden, name: :key}
   %input{type: :hidden, name: "AWSAccessKeyId", value: ENV['AWS_ACCESS_KEY_ID']}
   %input{type: :hidden, name: :acl, value: 'public-read'}
