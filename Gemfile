@@ -20,4 +20,5 @@ gem 'haml'
 gem "fog", "~> 1.3.1"
 gem 'sextant'
 gem 'aws-s3', require: 'aws/s3'
+gem 'newrelic_rpm'
 
