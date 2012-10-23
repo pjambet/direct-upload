@@ -13,7 +13,11 @@
     %tr
       %td= photo.name
       %td= photo.description
-      %td= image_tag photo.file
+      %td
+        - if photo.file.present?
+          = image_tag photo.file
+        - else 
+          No photo
       %td= link_to 'Show', photo
       %td= link_to 'Edit', edit_photo_path(photo)
       %td= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' }

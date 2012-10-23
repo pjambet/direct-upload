@@ -11,7 +11,10 @@
 
 %p
   %b Content:
-  = image_tag @photo.file
+  - if @photo.file.present?
+    = image_tag @photo.file
+  - else
+    No photo
 
 = link_to 'Edit', edit_photo_path(@photo)
 |
